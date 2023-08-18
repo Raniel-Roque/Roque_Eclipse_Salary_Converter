@@ -1,0 +1,232 @@
+package guiProject;
+import javax.swing.*;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Image;
+import java.awt.Color;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class Frame extends JFrame implements ActionListener{
+	
+	//GLOBAL CHENA
+	
+	Frame(){
+		
+		//JFrame frame = new JFrame();
+		ImageIcon frameI = new ImageIcon("frm.png");
+		Toolkit toolkit = getToolkit();
+		Dimension dimen = toolkit.getScreenSize();
+		
+		//FRAME SETS
+		setSize(1300, 700); //Sizes
+		setLocation(dimen.width/2 - getWidth()/2, dimen.height/2 - getHeight()/2);
+		setTitle("Employee Salary Calculator");
+		setIconImage(frameI.getImage());
+		getContentPane().setBackground(Color.LIGHT_GRAY);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setResizable(false);
+		setVisible(true);
+		setLayout(null);
+		
+		//NEW CHENA
+		//IN
+		JLabel InputBorder = new JLabel();
+		JLabel EmployeeSalaryCalculator = new JLabel();
+		JLabel title1 = new JLabel();
+		JLabel title2 = new JLabel();
+		JLabel title3 = new JLabel();
+		JLabel title4 = new JLabel();
+		JLabel title5 = new JLabel();
+		JLabel title6 = new JLabel();
+		
+		JTextField NameGet = new JTextField();
+		JTextField IDGet = new JTextField();
+		JTextField OccupationGet = new JTextField();
+		JTextField Working_HoursGet = new JTextField();
+		JTextField RateGet = new JTextField();
+		JTextField Overtime_RateGet = new JTextField();
+		
+		//OUT
+		JLabel OutputBorder = new JLabel();
+		JLabel SalaryDetails = new JLabel();
+		
+		JLabel title11 = new JLabel();
+		JLabel title22 = new JLabel();
+		JLabel title33 = new JLabel();
+		JLabel title44 = new JLabel();
+		JLabel title55 = new JLabel();
+		JLabel title66 = new JLabel();
+		
+		JLabel Tgross = new JLabel();
+		JLabel Tsss = new JLabel();
+		JLabel Tpagibig = new JLabel();
+		JLabel Tphilhealth = new JLabel();
+		JLabel Ttax = new JLabel();
+		JLabel Tline = new JLabel();
+		JLabel Tnet = new JLabel();
+			
+		JButton buttonCal = new JButton();
+		
+		//ADD CHENA
+		//IN
+		add(InputBorder);
+		add(EmployeeSalaryCalculator);
+		
+		add(title1);
+		add(title2);	
+		add(title3);
+		add(title4);
+		add(title5);
+		add(title6);
+		
+		add(NameGet);
+		add(IDGet);
+		add(OccupationGet);
+		add(Working_HoursGet);
+		add(RateGet);
+		add(Overtime_RateGet);
+		
+		//OUT
+		add(OutputBorder);
+		add(SalaryDetails);
+		add(title11);
+		add(title22);
+		add(title33);
+		add(title44);
+		add(title55);
+		add(title66;
+		add(Tgross);
+		add(Tline);
+		add(Tnet);
+		add(Tsss);
+		add(Tphilhealth);
+		add(Tpagibig);
+		add(Ttax);
+		add(buttonCal);
+		
+		//BOUNDS CHENA
+		
+		//INPUT
+		InputBorder.setBorder(BorderFactory.createLineBorder(Color.BLACK, 5));
+		InputBorder.setBounds(75, 100, 580, 400);
+		InputBorder.setForeground(Color.GRAY);
+		InputBorder.setFont(new Font("Times New Roman", Font.BOLD, 12));
+		
+		EmployeeSalaryCalculator.setText("Employee Salary Calculator");
+		EmployeeSalaryCalculator.setBounds(200, -120, 500, 500);
+		EmployeeSalaryCalculator.setFont(new Font("Times New Roman", Font.BOLD, 28));
+		EmployeeSalaryCalculator.setForeground(Color.BLACK);
+		
+		title1.setText("Employee Name:");
+		title1.setBounds(108, -60, 680, 500);
+		title1.setFont(new Font("Times New Roman", Font.BOLD, 28));
+		
+		title2.setText("Employee ID:");
+		title2.setBounds(107, -10, 680, 500);
+		title2.setFont(new Font("Times New Roman", Font.BOLD, 28));
+		
+		title3.setText("Occupation:");
+		title3.setBounds(108, 30, 690, 500);
+		title3.setFont(new Font("Times New Roman", Font.BOLD, 28));	
+		
+		title4.setText("Working Hours:");
+		title4.setBounds(108, 75, 690, 500);
+		title4.setFont(new Font("Times New Roman", Font.BOLD, 28));	
+		
+		title5.setText("Rate:");
+		title5.setBounds(108, 115, 690, 500);
+		title5.setFont(new Font("Times New Roman", Font.BOLD, 28));	
+		
+		title6.setText("Overtime Rate:");
+		title6.setBounds(108, 160, 690, 500);
+		title6.setFont(new Font("Times New Roman", Font.BOLD, 28));	
+		
+		NameGet.setBounds(320, 165, 290, 35);
+		IDGet.setBounds(320, 213, 290, 35);
+		OccupationGet.setBounds(320, 260, 290, 35);
+		Working_HoursGet.setBounds(320, 305, 290, 35);
+		RateGet.setBounds(320, 350, 290, 35);
+		Overtime_RateGet.setBounds(320, 395, 290, 35);
+		
+		//OUTPUT
+		OutputBorder.setBorder(BorderFactory.createLineBorder(Color.BLACK, 5));
+		OutputBorder.setBounds(690, 100, 500, 400);
+		OutputBorder.setFont(new Font("Times New Roman", Font.BOLD, 28));
+		OutputBorder.setForeground(Color.BLACK);
+		
+		SalaryDetails.setText("Salary Details");
+		SalaryDetails.setBounds(860, -120, 500, 500);
+		SalaryDetails.setFont(new Font("Times New Roman", Font.BOLD, 28));
+		SalaryDetails.setForeground(Color.BLACK);
+		
+		//title11 = new JLabel("");
+		title11.setBounds(730, 160, 680, 25);
+		title11.setFont(new Font("Times New Roman", Font.BOLD, 25));
+		
+		//title22 = new JLabel("Employee ID:");
+		title22.setBounds(764, 190, 300, 25);
+		title22.setFont(new Font("Times New Roman", Font.BOLD, 25));
+		
+		//title33 = new JLabel("Occupation:");
+		title33.setBounds(780, 220, 300, 25);
+		title33.setFont(new Font("Times New Roman", Font.BOLD, 25));
+		
+		//title44 = new JLabel("Working Hours:");
+		title44.setBounds(735, 250, 300, 25);
+		title44.setFont(new Font("Times New Roman", Font.BOLD, 25));
+		
+		//title55 = new JLabel("Rate:");
+		title55.setBounds(853, 275, 300, 25);
+		title55.setFont(new Font("Times New Roman", Font.BOLD, 25));
+		
+		//title66 = new JLabel("Overtime Rate:");
+		title66.setBounds(745, 300, 300, 25);
+		title66.setFont(new Font("Times New Roman", Font.BOLD, 25));
+		
+		Tgross.setText("Gross Pay:");
+		Tgross.setBounds(790, 330, 300, 25);
+		Tgross.setFont(new Font("Times New Roman", Font.BOLD, 25));
+		
+		Tsss.setText("SSS");
+		Tsss.setBounds(868, 350, 300, 25);
+		Tsss.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		
+		Tphilhealth.setText("PhilHealth:");
+		Tphilhealth.setBounds(812, 368, 300, 25);
+		Tphilhealth.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		
+		Tpagibig.setText("Pag-Ibig:");
+		Tpagibig.setBounds(830, 385, 300, 25);
+		Tpagibig.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		
+		Ttax.setText("Tax:");
+		Ttax.setBounds(868, 405, 300, 25);
+		Ttax.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		
+		Tline.setText("------------------------------------------");
+		Tline.setBounds(870, 420, 300, 25);
+		Tline.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		
+		Tnet.setText("NET PAY:");
+		Tnet.setBounds(770, 450, 300, 25);
+		Tnet.setFont(new Font("Times New Roman", Font.BOLD, 30));
+				
+		buttonCal.setBounds(370, 440, 200, 50);
+		buttonCal.setText("CALCULATE");
+		buttonCal.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		buttonCal.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+		buttonCal.setFocusable(false);
+		buttonCal.setBackground(null);;
+		buttonCal.addActionListener(this);
+		
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+}

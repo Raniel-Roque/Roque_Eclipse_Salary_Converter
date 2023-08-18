@@ -1,0 +1,39 @@
+package guiProject;
+import javax.swing.*;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Image;
+import java.awt.Color;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class Frame extends JFrame implements ActionListener{
+	
+	Frame(){
+		
+		//JFrame frame = new JFrame();
+		ImageIcon frameI = new ImageIcon("frm.png");
+		Toolkit toolkit = getToolkit();
+		Dimension dimen = toolkit.getScreenSize();
+		
+		//FRAME SETS
+		setSize(1300, 700); //Sizes
+		setLocation(dimen.width/2 - getWidth()/2, dimen.height/2 - getHeight()/2);
+		setTitle("Employee Salary Calculator");
+		setIconImage(frameI.getImage());
+		getContentPane().setBackground(Color.LIGHT_GRAY);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setResizable(false);
+		setVisible(true);
+		setLayout(null);
+		
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+}

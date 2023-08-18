@@ -1,0 +1,83 @@
+package guiProject;
+import javax.swing.*;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Image;
+import java.awt.Color;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class Frame extends JFrame implements ActionListener{
+	
+	//GLOBAL CHENA
+	
+	Frame(){
+		
+		//JFrame frame = new JFrame();
+		ImageIcon frameI = new ImageIcon("frm.png");
+		Toolkit toolkit = getToolkit();
+		Dimension dimen = toolkit.getScreenSize();
+		
+		//FRAME SETS
+		setSize(1300, 700); //Sizes
+		setLocation(dimen.width/2 - getWidth()/2, dimen.height/2 - getHeight()/2);
+		setTitle("Employee Salary Calculator");
+		setIconImage(frameI.getImage());
+		getContentPane().setBackground(Color.LIGHT_GRAY);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setResizable(false);
+		setVisible(true);
+		setLayout(null);
+		
+		//NEW CHENA
+		//IN
+		JLabel InputBorder = new JLabel();
+		JLabel EmployeeSalaryCalculator = new JLabel();
+		
+		//OUT
+		JLabel OutputBorder = new JLabel();
+		JLabel SalaryDetails = new JLabel();
+		
+		
+		//ADD CHENA
+		//IN
+		add(InputBorder);
+		add(EmployeeSalaryCalculator);
+		
+		//OUT
+		add(OutputBorder);
+		add(SalaryDetails);
+		//BOUNDS CHENA
+		
+		//INPUT
+		InputBorder.setBorder(BorderFactory.createLineBorder(Color.BLACK, 5));
+		InputBorder.setBounds(75, 100, 580, 400);
+		InputBorder.setForeground(Color.GRAY);
+		InputBorder.setFont(new Font("Times New Roman", Font.BOLD, 12));
+		
+		EmployeeSalaryCalculator.setText("Employee Salary Calculator");
+		EmployeeSalaryCalculator.setBounds(200, -120, 500, 500);
+		EmployeeSalaryCalculator.setFont(new Font("Times New Roman", Font.BOLD, 28));
+		EmployeeSalaryCalculator.setForeground(Color.BLACK);
+		
+		//OUTPUT
+		OutputBorder.setBorder(BorderFactory.createLineBorder(Color.BLACK, 5));
+		OutputBorder.setBounds(690, 100, 500, 400);
+		OutputBorder.setFont(new Font("Times New Roman", Font.BOLD, 28));
+		OutputBorder.setForeground(Color.BLACK);
+		
+		SalaryDetails.setText("Salary Details");
+		SalaryDetails.setBounds(860, -120, 500, 500);
+		SalaryDetails.setFont(new Font("Times New Roman", Font.BOLD, 28));
+		SalaryDetails.setForeground(Color.BLACK);
+		
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+}

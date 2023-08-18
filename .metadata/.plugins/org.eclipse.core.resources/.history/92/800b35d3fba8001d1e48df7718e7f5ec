@@ -1,0 +1,264 @@
+package guiProject;
+import javax.swing.*;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Image;
+import java.awt.Color;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class Frame extends JFrame implements ActionListener{
+		
+	JButton buttonCal;
+	JLabel text1 ,text2 ,text3 ,text4 ,text5 ,text6, 
+	title1, title2, title3, title4, title5, title6,
+	title11, title22, title33, title44, title55, title66;
+		
+	Frame(){
+	JFrame frame = new JFrame();
+	ImageIcon frameI = new ImageIcon("frm.png");
+	Toolkit toolkit = frame.getToolkit();
+	Dimension dimen = toolkit.getScreenSize();
+	
+	JLabel label = new JLabel();
+	JLabel labelBor = new JLabel(); 
+	JLabel labelBor2 = new JLabel();
+	JLabel labelDetails = new JLabel();	
+	
+	JLabel title1 = new JLabel();
+	JLabel title2 = new JLabel();
+	JLabel title3 = new JLabel();
+	JLabel title4 = new JLabel();
+	JLabel title5 = new JLabel();
+	JLabel title6 = new JLabel();
+	
+	JLabel title11 = new JLabel();
+	JLabel title22 = new JLabel();
+	JLabel title33 = new JLabel();
+	JLabel title44 = new JLabel();
+	JLabel title55 = new JLabel();
+	JLabel title66 = new JLabel();
+	
+	//the supposed to be 3rd set
+	/*JLabel res_Name = new JLabel();
+	JLabel res_ID = new JLabel();
+	JLabel res_Occ = new JLabel();
+	JLabel res_WH = new JLabel();
+	JLabel res_OT = new JLabel();
+	JLabel res_Gross = new JLabel();
+	JLabel res_SSS = new JLabel();
+	JLabel res_PH = new JLabel();
+	JLabel res_PagIbig = new JLabel();
+	JLabel res_NetPay = new JLabel();*/
+	
+	
+	//titles/label
+	JLabel Tgross = new JLabel();
+	JLabel Tsss = new JLabel();
+	JLabel Tpagibig = new JLabel();
+	JLabel Tphilhealth = new JLabel();
+	JLabel Ttax = new JLabel();
+	JLabel Tline = new JLabel();
+	JLabel Tnet = new JLabel();
+		
+	buttonCal = new JButton();
+	
+	//JTextField tit11 = new JTextField();
+	
+	JTextField text1 = new JTextField();
+	JTextField text2 = new JTextField();
+	JTextField text3 = new JTextField();
+	JTextField text4 = new JTextField();
+	JTextField text5 = new JTextField();
+	JTextField text6 = new JTextField();
+		
+	//ImageIcon frameII = new ImageIcon(new ImageIcon("neroo.jpg").getImage().getScaledInstance(300, 300, Image.SCALE_SMOOTH));
+	
+	frame.setSize(1300, 700); //Sizes
+	frame.setLocation(dimen.width/2 - frame.getWidth()/2, dimen.height/2 - frame.getHeight()/2);
+	frame.setTitle("Employee Salary Calculator");
+	frame.setIconImage(frameI.getImage());
+	frame.getContentPane().setBackground(Color.LIGHT_GRAY);
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	frame.setResizable(false);
+	frame.setVisible(true);
+	
+	label.setBorder(BorderFactory.createLineBorder(Color.BLACK, 5));
+	label.setBounds(75, 100, 580, 400);
+	label.setForeground(Color.GRAY);
+	label.setFont(new Font("Times New Roman", Font.BOLD, 12));
+	
+	labelDetails.setText("Salary Details");
+	labelDetails.setBounds(860, -120, 500, 500);
+	labelDetails.setFont(new Font("Times New Roman", Font.BOLD, 28));
+	labelDetails.setForeground(Color.BLACK);
+	
+	labelBor.setText("Employee Salary Calculator");
+	labelBor.setBounds(200, -120, 500, 500);
+	labelBor.setFont(new Font("Times New Roman", Font.BOLD, 28));
+	labelBor.setForeground(Color.BLACK);
+	
+	labelBor2.setBorder(BorderFactory.createLineBorder(Color.BLACK, 5));
+	labelBor2.setBounds(690, 100, 500, 400);
+	labelBor2.setFont(new Font("Times New Roman", Font.BOLD, 28));
+	labelBor2.setForeground(Color.BLACK);
+	
+	text1.setBounds(320, 165, 290, 35);
+	text2.setBounds(320, 213, 290, 35);
+	text3.setBounds(320, 260, 290, 35);
+	text4.setBounds(320, 305, 290, 35);
+	text5.setBounds(320, 350, 290, 35);
+	text6.setBounds(320, 395, 290, 35);
+				
+	title1.setText("Employee Name:");
+	title1.setBounds(108, -60, 680, 500);
+	title1.setFont(new Font("Times New Roman", Font.BOLD, 28));
+	
+	title2.setText("Employee ID:");
+	title2.setBounds(107, -10, 680, 500);
+	title2.setFont(new Font("Times New Roman", Font.BOLD, 28));
+	
+	title3.setText("Occupation:");
+	title3.setBounds(108, 30, 690, 500);
+	title3.setFont(new Font("Times New Roman", Font.BOLD, 28));	
+	
+	title4.setText("Working Hours:");
+	title4.setBounds(108, 75, 690, 500);
+	title4.setFont(new Font("Times New Roman", Font.BOLD, 28));	
+	
+	title5.setText("Rate:");
+	title5.setBounds(108, 115, 690, 500);
+	title5.setFont(new Font("Times New Roman", Font.BOLD, 28));	
+	
+	title6.setText("Overtime Rate:");
+	title6.setBounds(108, 160, 690, 500);
+	title6.setFont(new Font("Times New Roman", Font.BOLD, 28));	
+	
+	//
+	
+	//title11 = new JLabel("");
+	title11.setBounds(730, 160, 680, 25);
+	title11.setFont(new Font("Times New Roman", Font.BOLD, 25));
+	
+	//title22 = new JLabel("Employee ID:");
+	title22.setBounds(764, 190, 300, 25);
+	title22.setFont(new Font("Times New Roman", Font.BOLD, 25));
+	
+	//title33 = new JLabel("Occupation:");
+	title33.setBounds(780, 220, 300, 25);
+	title33.setFont(new Font("Times New Roman", Font.BOLD, 25));
+	
+	//title44 = new JLabel("Working Hours:");
+	title44.setBounds(735, 250, 300, 25);
+	title44.setFont(new Font("Times New Roman", Font.BOLD, 25));
+	
+	//title55 = new JLabel("Rate:");
+	title55.setBounds(853, 275, 300, 25);
+	title55.setFont(new Font("Times New Roman", Font.BOLD, 25));
+	
+	//title66 = new JLabel("Overtime Rate:");
+	title66.setBounds(745, 300, 300, 25);
+	title66.setFont(new Font("Times New Roman", Font.BOLD, 25));
+	
+	Tgross.setText("Gross Pay:");
+	Tgross.setBounds(790, 330, 300, 25);
+	Tgross.setFont(new Font("Times New Roman", Font.BOLD, 25));
+	
+	Tsss.setText("SSS");
+	Tsss.setBounds(868, 350, 300, 25);
+	Tsss.setFont(new Font("Times New Roman", Font.BOLD, 20));
+	
+	Tphilhealth.setText("PhilHealth:");
+	Tphilhealth.setBounds(812, 368, 300, 25);
+	Tphilhealth.setFont(new Font("Times New Roman", Font.BOLD, 20));
+	
+	Tpagibig.setText("Pag-Ibig:");
+	Tpagibig.setBounds(830, 385, 300, 25);
+	Tpagibig.setFont(new Font("Times New Roman", Font.BOLD, 20));
+	
+	Ttax.setText("Tax:");
+	Ttax.setBounds(868, 405, 300, 25);
+	Ttax.setFont(new Font("Times New Roman", Font.BOLD, 20));
+	
+	Tline.setText("------------------------------------------");
+	Tline.setBounds(870, 420, 300, 25);
+	Tline.setFont(new Font("Times New Roman", Font.BOLD, 20));
+	
+	//Tnet.setText("NET PAY:");
+	Tnet.setBounds(770, 450, 300, 25);
+	Tnet.setFont(new Font("Times New Roman", Font.BOLD, 30));
+			
+	buttonCal.setBounds(370, 440, 200, 50);
+	buttonCal.setText("CALCULATE");
+	buttonCal.setFont(new Font("Times New Roman", Font.BOLD, 20));
+	buttonCal.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+	buttonCal.setFocusable(false);
+	buttonCal.setBackground(null);;
+	buttonCal.addActionListener(this);
+			
+	//label.setIcon(frameII);	
+		
+	frame.add(label);
+	frame.add(labelBor);
+	frame.add(labelBor2);
+	frame.add(labelDetails);
+	
+	frame.add(Tgross);
+	frame.add(Tline);
+	frame.add(Tnet);
+	frame.add(Tsss);
+	frame.add(Tphilhealth);
+	frame.add(Tpagibig);
+	frame.add(Ttax);
+	
+	frame.add(text1);
+	frame.add(text2);
+	frame.add(text3);
+	frame.add(text4);
+	frame.add(text5);
+	frame.add(text6);
+		
+	frame.add(title1);
+	frame.add(title2);	
+	frame.add(title3);
+	frame.add(title4);
+	frame.add(title5);
+	frame.add(title6);
+	
+	frame.add(title11);
+	frame.add(title22);
+	frame.add(title33);
+	frame.add(title44);
+	frame.add(title55);
+	frame.add(title66);
+		
+	frame.add(buttonCal);
+	frame.setLayout(null);
+	frame.setVisible(true);	
+		
+	}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		
+		if(e.getSource()== buttonCal) {
+		
+		/*String Name = text1.getText();
+		String ID = text2.getText();
+		String Occupation = text3.getText();
+		String WorkingHours = text4.getText();
+		String Rate = text5.getText();
+		String OverTime = text6.getText();*/
+						
+		title11.setText("Employee Name:    " + text1.getText());
+		/*title22.setText("Employee ID:      " + ID);
+		title33.setText("Designation:      " + Occupation);
+		title44.setText("Working Hours:    " + WorkingHours);
+		title55.setText("Rate:             " + Rate );
+		title66.setText("Over Time:        " + OverTime);*/
+		
+	}
+
+	
+}
+}

@@ -1,0 +1,80 @@
+package converter;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.*;
+
+public class ConverterWelcome extends JFrame implements ActionListener {
+	
+	ImageIcon Logo = new ImageIcon("Unit_Con.png");
+	Toolkit ToolK = getToolkit();
+	Dimension Size = ToolK.getScreenSize();
+	
+	JButton Temp, Mass, Currency, Length;
+	
+	ConverterWelcome(){
+	
+	//FRAME SETS
+	setSize(450, 475);
+	setLocation(Size.width/2 - getWidth()/2, Size.height/2 - getHeight()/2);
+	getContentPane().setBackground(Color.decode("#fcd47c"));
+	setResizable(false);
+	setTitle("Unit Converter");
+	setIconImage(Logo.getImage());
+	setLayout(null);
+	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	
+	JLabel Title = new JLabel();
+	JLabel Subtitle = new JLabel();
+	Temp = new JButton();
+	Mass = new JButton();
+	Currency = new JButton();
+	Length = new JButton();
+	
+	add(Title);
+	add(Subtitle);
+	add(Temp);
+	
+	Title.setBounds(0, 5, 440, 50);
+	Title.setText("Unit Converter");
+	Title.setHorizontalAlignment(JLabel.CENTER);
+	Title.setFont(new Font("Arial", Font.BOLD, 40));
+	
+	Subtitle.setBounds(0, 50, 440, 50);
+	Subtitle.setText("Select a unit of measurement");
+	Subtitle.setHorizontalAlignment(JLabel.CENTER);
+	Subtitle.setFont(new Font("Arial", Font.ITALIC, 25));
+	
+	//BUTTONS
+	
+	Temp.setText("CALCULATE");
+	Temp.setBounds(50, 100, 100, 100);
+	Temp.setFont(new Font("Arial", Font.BOLD, 15));
+	Temp.setForeground(Color.black);
+	Temp.setBackground(Color.decode("#A9DCF6"));
+	Temp.setOpaque(true);
+	Temp.setBorder(BorderFactory.createLineBorder(Color.black, 3));
+	Temp.setFocusable(false);
+	Temp.addActionListener(this);
+
+	setVisible(true);
+	}
+	
+	
+	
+	
+	
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+}

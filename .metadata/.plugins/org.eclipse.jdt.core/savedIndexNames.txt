@@ -1,0 +1,8 @@
+INDEX VERSION 1.131+C:\Users\HP\Desktop\Year 1\ROQUE ECLIPSE CODE\.metadata\.plugins\org.eclipse.jdt.core
+502211265.index
+3746143228.index
+2366335219.index
+1840769488.index
+4089158505.index
+1865797976.index
+1994032945.index

@@ -1,0 +1,126 @@
+package converter;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.*;
+
+public class ConverterWelcome extends JFrame implements ActionListener {
+	
+	Toolkit ToolK = getToolkit();
+	Dimension Size = ToolK.getScreenSize();
+	
+	JButton Temp, Mass, Currency, Length;
+	
+	ConverterWelcome(){
+	
+	ImageIcon Logo = new ImageIcon("Unit_Con.png");
+	ImageIcon TempLg = new ImageIcon(new ImageIcon("TEMP.jpg").getImage().getScaledInstance(125, 125, 0));
+	ImageIcon MassLg = new ImageIcon(new ImageIcon("mass.jpg").getImage().getScaledInstance(125, 125, 0));
+	ImageIcon LengthLg = new ImageIcon(new ImageIcon("Screenshot_1.jpg").getImage().getScaledInstance(125, 125, 0));
+	ImageIcon CurrencyLg = new ImageIcon(new ImageIcon("Currency.jpg").getImage().getScaledInstance(125, 125, 0));
+		
+	//FRAME SETS
+	setSize(450, 475);
+	setLocation(Size.width/2 - getWidth()/2, Size.height/2 - getHeight()/2);
+	getContentPane().setBackground(Color.decode("#fcd47c"));
+	setResizable(false);
+	setTitle("Unit Converter");
+	setIconImage(Logo.getImage());
+	setLayout(null);
+	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	
+	JLabel Title = new JLabel();
+	JLabel Subtitle = new JLabel();
+	JLabel TempTxT = new JLabel();
+	JLabel MassTxT = new JLabel();
+	JLabel LengthTxT = new JLabel();
+	JLabel CurrencyTxT = new JLabel();
+	Temp = new JButton();
+	Mass = new JButton();
+	Length = new JButton();
+	Currency = new JButton();
+	
+	
+	add(Title);
+	add(Subtitle);
+	add(TempTxT);
+	add(MassTxT);
+	add(LengthTxT);
+	add(CurrencyTxT);
+	
+	add(Temp);
+	add(Mass);
+	add(Length);
+	add(Currency);
+	
+	Title.setBounds(0, 5, 440, 50);
+	Title.setText("Unit Converter");
+	Title.setHorizontalAlignment(JLabel.CENTER);
+	Title.setFont(new Font("Arial", Font.BOLD, 40));
+	
+	Subtitle.setBounds(0, 45, 440, 50);
+	Subtitle.setText("Select a unit of measurement");
+	Subtitle.setHorizontalAlignment(JLabel.CENTER);
+	Subtitle.setFont(new Font("Arial", Font.ITALIC, 25));
+	
+	TempTxT.setBounds(60, 240, 200, 50);
+	TempTxT.setText("Temperature");
+	TempTxT.setFont(new Font("Arial", Font.BOLD, 25));
+	
+	//BUTTONS
+	
+	Temp.setIcon(TempLg);
+	Temp.setBounds(60, 100, 125, 125);
+	Temp.setFont(new Font("Arial", Font.BOLD, 15));
+	Temp.setOpaque(true);
+	Temp.setBorder(BorderFactory.createLineBorder(Color.black, 3));
+	Temp.setFocusable(false);
+	Temp.addActionListener(this);
+	
+	Mass.setIcon(MassLg);
+	Mass.setBounds(60, 270, 125, 125);
+	Mass.setFont(new Font("Arial", Font.BOLD, 15));
+	Mass.setOpaque(true);
+	Mass.setBorder(BorderFactory.createLineBorder(Color.black, 3));
+	Mass.setFocusable(false);
+	Mass.addActionListener(this);
+	
+	Length.setIcon(LengthLg);
+	Length.setBounds(250, 100, 125, 125);
+	Length.setFont(new Font("Arial", Font.BOLD, 15));
+	Length.setOpaque(true);
+	Length.setBorder(BorderFactory.createLineBorder(Color.black, 3));
+	Length.setFocusable(false);
+	Length.addActionListener(this);
+	
+	Currency.setIcon(CurrencyLg);
+	Currency.setBounds(250, 270, 125, 125);
+	Currency.setFont(new Font("Arial", Font.BOLD, 15));
+	Currency.setOpaque(true);
+	Currency.setBorder(BorderFactory.createLineBorder(Color.black, 3));
+	Currency.setFocusable(false);
+	Currency.addActionListener(this);
+	
+
+
+	setVisible(true);
+	}
+	
+	
+	
+	
+	
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+}
